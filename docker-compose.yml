@@ -1,0 +1,36 @@
+services:
+  bloodcare:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bloodcare
+    ports:
+      - "8081:80"
+    restart: unless-stopped
+    networks:
+      - cloudflare
+      - bloodcare-internal
+    depends_on:
+      - bloodcare-api
+
+  bloodcare-api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: bloodcare-api
+    environment:
+      - DATA_DIR=/data
+    volumes:
+      - bloodcare-data:/data
+    restart: unless-stopped
+    networks:
+      - bloodcare-internal
+
+networks:
+  cloudflare:
+    external: true
+  bloodcare-internal:
+    driver: bridge
+
+volumes:
+  bloodcare-data:

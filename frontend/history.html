@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1a1a24"><meta name="description" content="Your BloodCare measurement history.">
+  <link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <title>History | BloodCare</title><link rel="stylesheet" href="css/styles.css"><script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="app-header"><a class="brand" href="index.html" aria-label="BloodCare home"><img class="brand-mark" src="icons/icon-192.png" alt=""><span><strong>BloodCare</strong><small data-i18n="app_jargon">Guard Your Heart Health</small></span></a><button class="icon-button" id="menu-toggle" type="button" aria-label="Open menu" aria-controls="app-drawer" aria-expanded="false">☰</button></header>
+  <aside class="drawer" id="app-drawer" aria-hidden="true"><div class="drawer-head"><span class="eyebrow">YOUR SPACE</span><button class="icon-button" id="drawer-close" type="button" aria-label="Close menu">×</button></div><nav class="drawer-nav"><button type="button" data-action="create-profile"><span>👤</span><span data-i18n="nav_create_acc">Create Account</span></button><button type="button" data-action="edit-profile"><span>✏️</span><span data-i18n="nav_edit_acc">Edit Account</span></button><a class="drawer-link" href="history.html"><span>📜</span><span data-i18n="nav_history">History</span></a><button type="button" data-action="theme"><span>◐</span><span data-i18n="nav_theme">Theme</span><span class="drawer-value" id="theme-value">Dark</span></button><button type="button" data-action="language"><span>🌐</span><span data-i18n="nav_language">Language</span><span class="drawer-value" id="language-value">EN</span></button></nav></aside><div class="scrim" id="scrim"></div>
+  <main class="page-shell"><section class="hero-grid"><div class="hero-copy reveal"><span class="eyebrow">YOUR SNAPSHOTS</span><h1>Every check-in,<br><em>in one place.</em></h1><p>See your patterns, celebrate small wins, and keep your heart story close.</p></div><div class="mascot-container reveal" aria-hidden="true"><div class="mascot-heart">♥</div><span class="mascot-face">◡</span></div></section><section class="history-section reveal" id="history-section"><div class="section-heading"><div><span class="eyebrow">MEASUREMENT HISTORY</span><h2 id="history-title">Recent history</h2></div><select id="history-filter" aria-label="Filter history"><option value="all">All profiles</option></select></div><div id="history-list" class="history-list"><div class="empty-state"><span>🌱</span><p>Your saved check-ins will bloom here.</p></div></div></section></main>
+  <footer><span data-i18n="footer_text">♥ Track daily, live healthy. Made with care for your heart.</span></footer><script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');</script>
+</body>
+</html>
